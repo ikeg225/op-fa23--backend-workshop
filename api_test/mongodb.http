@@ -1,0 +1,45 @@
+@baseUrl = http://localhost:8000
+
+### Add Contestant
+post {{baseUrl}}/angler
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "age": 50,
+    "hasBoat": true
+}
+
+### Add Contestant 2
+post {{baseUrl}}/angler
+Content-Type: application/json
+
+{
+    "name": "John",
+    "age": 23,
+    "hasBoat": false
+}
+
+### Missing Field for Contestant
+post {{baseUrl}}/angler
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "age": 50
+}
+
+### Get All Anglers, No Parameter
+get {{baseUrl}}/anglers
+
+### Add a fish to bob
+post {{baseUrl}}/newFishy
+Content-Type: application/json
+
+{
+    "contestantName": "Bob",
+    "fishWeight": 4
+}
+
+### Get Winner
+get {{baseUrl}}/winner
